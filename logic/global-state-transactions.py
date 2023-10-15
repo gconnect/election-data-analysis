@@ -1,7 +1,6 @@
 import requests
 import pandas as pd
 import base64
-import json
 import matplotlib.pyplot as plt
 
 # Define the API endpoint
@@ -13,9 +12,14 @@ data = response.json()
 
 # Create an empty list to store the table data
 table_data = []
+# Initialize a counter for the total transactions
+total_transactions = 0
 
 # Loop through transactions and global-state-delta
 for transaction in data["transactions"]:
+    # Increment the total transactions counter
+    total_transactions += 1
+
     for delta in transaction["global-state-delta"]:
         key = base64.b64decode(delta["key"]).decode('utf-8')  # Decode the base64 key
         uint_value = delta["value"]["uint"]
@@ -34,22 +38,24 @@ for transaction in data["transactions"]:
             table_data.append([key, uint_value])
 
 # Create a DataFrame from the table data
-df = pd.DataFrame(table_data, columns=["Key", "Value"])
+df = pd.DataFrame(table_data, columns=["Categories", "Value"])
 
 # Export the DataFrame to a CSV file
-df.to_csv("global_state_delta_filtered.csv", index=False)
+df.to_csv("../files/global_state_delta_filtered.csv", index=False)
 
 # Plot a graph using Matplotlib based on the modified data
 plt.figure(figsize=(10, 6))
-plt.bar(df["Key"], df["Value"])
-plt.xlabel('Key')
+plt.bar(df["Categories"], df["Value"])
+plt.xlabel('Categories')
 plt.ylabel('Value')
-plt.title('Global State Delta (Excluding submission_period)')
+plt.title('Election Data (Blockchain)')
 plt.xticks(rotation=90)
 plt.tight_layout()
 
 # Save the graph as an image
 plt.savefig('../images/global_state_graph_filtered.png')
+
+print("Total Transactions:", total_transactions)
 
 # Print the resulting DataFrame
 print(df)

@@ -49,7 +49,7 @@ plt.xticks(rotation=90)
 plt.tight_layout()
 
 # Save the graph as an image
-plt.savefig('global_state_graph_filtered.png')
+plt.savefig('../images/global_state_graph_filtered.png')
 
 # Print the resulting DataFrame
 print(df)

@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Specify the file path to your XLSX file
-file_path = '/Users/gloryagatevure/Desktop/result.xlsx'
+file_path = '../files/result.csv'
 
 # Read the XLSX file into a DataFrame
 df = pd.read_excel(file_path)
@@ -27,6 +27,10 @@ plt.title('Officials in Agreement vs. National Aggregate (Consensus Vote Count)'
 plt.xlabel('S/N')
 plt.ylabel('Count')
 plt.legend()
+
+
+# Save the graph as an image
+plt.savefig('../images/consensus_vote_count.png')
 
 # Show the plot
 plt.show()

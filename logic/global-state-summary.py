@@ -34,7 +34,7 @@ for item in data["params"]["global-state"]:
     print(f"Decoded Key: {decoded_key}, Value: {value}")
 
 # Write decoded key-value pairs (excluding "submission_period") to a CSV file
-with open('global-state-decoded-keys.csv', 'w', newline='') as csv_file:
+with open('../global-state-decoded-keys.csv', 'w', newline='') as csv_file:
     fieldnames = ['decoded_key', 'value']
     writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
     writer.writeheader()

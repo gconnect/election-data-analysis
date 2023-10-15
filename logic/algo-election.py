@@ -30,7 +30,7 @@ first_transaction = data["transactions"][0]
 headers = [col for col in first_transaction.keys() if col not in columns_to_remove]
 
 # Create a CSV file and write the data with selected columns
-with open("filtered_transactions.csv", mode="w", newline="") as file:
+with open("../files/filtered_transactions.csv", mode="w", newline="") as file:
     writer = csv.DictWriter(file, fieldnames=headers)
     writer.writeheader()
     for transaction in data["transactions"]:

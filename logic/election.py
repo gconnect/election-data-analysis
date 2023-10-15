@@ -3,7 +3,7 @@ import pandas as pd
 import random
 
 # Specify the folder path where your XLS files are located
-folder_path = '/Users/gloryagatevure/Desktop/election-data'
+folder_path = '../election-data'
 
 # Initialize an empty list to store the extracted data
 data_list = []
@@ -62,4 +62,4 @@ for filename in os.listdir(folder_path):
 result_df = pd.DataFrame(data_list)
 
 # Save the result DataFrame to a new Excel file
-result_df.to_excel('/Users/gloryagatevure/Desktop/result.xlsx', index=False)
+result_df.to_csv('files/result.csv', index=False)

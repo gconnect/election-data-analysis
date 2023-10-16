@@ -1,41 +1,36 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# Specify the file path to your XLSX file
+# Specify the file path to your CSV file
 file_path = '../files/result.csv'
 
-# Read the XLSX file into a DataFrame
-df = pd.read_excel(file_path)
+# Read the CSV file into a DataFrame
+df = pd.read_csv(file_path)
 
-# Filter rows where 'Consensus Reached' is 'yes'
-consensus_yes = df[df['Consensus Reached'] == 'yes']
+# Calculate the actual total Vote Count
+total_vote_count = df['Vote Count'].sum()
 
-# Calculate the national aggregate of vote count for 'Consensus Reached' == 'yes'
-national_aggregate = consensus_yes['Vote Count'].sum()
+# Filter the DataFrame to include only rows where 'Consensus Reached' is 'Yes'
+consensus_yes_df = df[df['Consensus Reached'] == 'Yes']
 
-# Create a figure and axis
-fig, ax = plt.subplots(figsize=(10, 6))
+# Calculate the total Vote Count when 'Consensus Reached' is 'Yes'
+consensus_yes_vote_count = consensus_yes_df['Vote Count'].sum()
 
-# Plot Total Number of Officials
-ax.bar(df['S/N'], df['Officials in Agreement (n)'], width=0.4, label='Officials in Agreement (n)', align='edge', color='blue', alpha=0.5)
+# Create a DataFrame for the comparative analysis
+comparison_data = pd.DataFrame({
+    'Category': ['Total Vote Count', 'Total Vote Count (Consensus Reached Yes)'],
+    'Count': [total_vote_count, consensus_yes_vote_count]
+})
 
-# Plot National Aggregate for 'Consensus Reached' == 'yes'
-ax.bar(consensus_yes['S/N'], national_aggregate, width=0.4, label='National Aggregate (Consensus)', align='center', color='green')
-
-# Customize the plot
-plt.title('Officials in Agreement vs. National Aggregate (Consensus Vote Count)')
-plt.xlabel('S/N')
+# Plot the graph for comparison
+plt.figure(figsize=(8, 6))
+plt.bar(comparison_data['Category'], comparison_data['Count'], color=['blue', 'green'])
+plt.title('Comparative Analysis of Total Vote Count vs. Total Vote Count (Consensus Reached Yes)')
+plt.xlabel('Category')
 plt.ylabel('Count')
-plt.legend()
-
 
 # Save the graph as an image
-plt.savefig('../images/consensus_vote_count.png')
+plt.savefig('../images/vote_count_comparison.png')
 
 # Show the plot
 plt.show()
-
-
-
-
-

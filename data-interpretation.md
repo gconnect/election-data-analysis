@@ -22,6 +22,19 @@ The above analysis show that a greater percentage of the vote count did not reac
 
 ## Graph of the actual data compared to the aggregation of consensus reached
 
+**Fig** Comparative Analysis of Actual Vote Count and Consensus Vote Count
+
+![image](./images/vote_count_comparison.png)
+
+**Interpretation:**
+
+The bar on the left, labeled 'Total Vote Count,' represents the total vote count for all data in the CSV file, irrespective of whether 'Consensus Reached' is 'Yes' or not.
+
+The bar on the right, labeled 'Total Vote Count (Consensus Reached Yes),' represents the total vote count, considering only the rows where 'Consensus Reached' is 'Yes.'
+
+The plot allows you to visually compare these two categories of vote counts. It's a straightforward way to see how the total vote count changes when 'Consensus Reached' is 'Yes' and when it is not. The color-coding (blue and green) helps distinguish between the two categories.
+
+This information is useful for understanding the impact of 'Consensus Reached' on the total vote count 
 
 ## Officials in agreement compared with total officials
 **Fig 1:1** Officials in Agreement vs Total Officials

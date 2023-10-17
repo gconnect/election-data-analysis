@@ -42,7 +42,7 @@ The plot allows you to visually compare these two categories of vote counts. It'
 
 This information is useful for understanding the impact of 'Consensus Reached' on the total vote count 
 
-The above plot shows that the total number of vote count is greater than the aggregate consensus vote count.
+The above plot shows that the total number of vote count is greater than the aggregate consensus vote count. Only about 10% of the vote count submitted will be taken into consideration as those were the vote count that reached consensus.
 
 ## Officials in agreement compared with total officials
 **Fig 3** Officials in Agreement vs Total Officials

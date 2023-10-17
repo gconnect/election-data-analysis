@@ -1,8 +1,12 @@
 # Data Analysis, Interpretation And Visualization
 
+## Introduction
+
+The presented data analysis and visualization provide valuable insights into various aspects of a blockchain-based election system, offering a comprehensive understanding of the data trends and outcomes. The data includes information about consensus reached, transaction performance, traffic patterns, and election-related statistics. These insights can be instrumental for decision-makers, network operators, and stakeholders in making informed decisions, optimizing system performance, and assessing the efficacy of the election process.
+
 ## Graph of consensus reached and not reached
 
-**Fig 1:1** Consensus Reached
+**Fig 1** Consensus Reached
 
 ![image](./images/consensus_reached.png)
 
@@ -20,9 +24,11 @@ The above analysis show that a greater percentage of the vote count did not reac
 - By observing the height of the bars, you can quickly determine the frequency or count of each consensus outcome.
 - The colors differentiate between different types of consensus outcomes. In this case, red and blue bars represent different consensus results, such as "Consensus Reached - Yes" and "Consensus Reached - No."
 
+Given the above interpretation and the bar chart. It shows that only about 5% of the of the officials arrived at a consensus level the remaining 95% did not reach consensus.
+
 ## Graph of the actual data compared to the aggregation of consensus reached
 
-**Fig** Comparative Analysis of Actual Vote Count and Consensus Vote Count
+**Fig 2** Comparative Analysis of Actual Vote Count and Consensus Vote Count
 
 ![image](./images/vote_count_comparison.png)
 
@@ -36,8 +42,10 @@ The plot allows you to visually compare these two categories of vote counts. It'
 
 This information is useful for understanding the impact of 'Consensus Reached' on the total vote count 
 
+The above plot shows that the total number of vote count is greater than the aggregate consensus vote count.
+
 ## Officials in agreement compared with total officials
-**Fig 1:1** Officials in Agreement vs Total Officials
+**Fig 3** Officials in Agreement vs Total Officials
 
 ![image](./images/official_in_aggreement.png)
 
@@ -58,12 +66,11 @@ In summary, this plot is a visual tool for officials to assess and understand th
 And the above plot shows a significant level of disagreement between the officials. Which means little level of consensus was reached.
 
 
-
 ## Performance/ traffic/ Saturation/Latency  Analysis
 
 ### Transaction Performance Metric Analysis
 
-**Fig:** Transaction Metrics
+**Fig 4** Transaction Metrics
 
 ![image](./images/transaction-metric.png)
 The above plot visualizes the transaction confirmation time over different confirmed rounds.
@@ -75,20 +82,22 @@ There was a delay in the transaction at point 35000 seconds which was confirmed 
 
 ### Transaction Throughput Over Rounds Analysis
 
-**Fig** Transaction Throughput
+**Fig 5** Transaction Throughput
 ![image](./images/transaction-throughput.png)
 The above plot visualizes transaction throughput over different confirmed rounds
 
 **Interpretation:**
 
 The above plot helps you understand the capacity of the system to process transactions. It shows how many transactions were confirmed per second during different rounds. Higher peaks indicate better throughput, while lower values may suggest congestion or reduced processing capacity.
+At confirmed round of 3.20 and 3.222 and 3.23 there was a higher peak which signifies better throughput.
+
 
 
 ### Saturation Analysis
 
 Saturation refers to the point at which a network reaches its processing capacity. The saturation analysis checks for network's capacity and congestion.
 
-**Fig:** Saturation Analysis
+**Fig 6** Saturation Analysis
 
 ![image](./images/saturation.png)
 
@@ -117,6 +126,8 @@ Understanding how transaction fees change over time is essential for blockchain 
 
 ### Latency Analysis
 
+**Fig 7** Saturation Analysis
+
 ![image](./images/latency.png)
 
 This plot helps in understanding the latency in the confirmation of transactions over a period.
@@ -144,7 +155,7 @@ The above plot indicate an upward trend in latency which suggest that confirmati
 
 This type of plot is useful for understanding transaction behavior and identifying trends or anomalies in the dataset over time. It can be helpful for monitoring network activity, identifying peak usage times, or analyzing the impact of specific events on transaction traffic.
 
-**Fig:** Traffic Analysis
+**Fig 8** Traffic Analysis
 
 ![image](./images/traffic.png)
 The above plot counts the number of transactions in each round and plots the results as a line chart. Here's an interpretation of the plot:
@@ -157,7 +168,8 @@ The above plot counts the number of transactions in each round and plots the res
 
 **Interpretation:** 
 
-The plot shows how the number of transactions varies over time (confirmed rounds). You can see patterns, spikes, or fluctuations in transaction activity. For example, if there are sudden peaks in the graph, it suggests moments of high transaction activity, while flat regions indicate periods with lower transaction volumes. The above graph shows flat regions which indicate moments of low transactions.
+The plot shows how the number of transactions varies over time (confirmed rounds). You can see patterns, spikes, or fluctuations in transaction activity. For example, if there are sudden peaks in the graph, it suggests moments of high transaction activity, while flat regions indicate periods with lower transaction volumes. 
+The above graph shows flat regions which indicate a prolong moments of low transactions.
 
 **Grid Lines:** The grid lines help in reading the values more accurately and are present in both the X and Y axes.
 
@@ -167,7 +179,7 @@ The plot shows how the number of transactions varies over time (confirmed rounds
 The plot below shows the bar chart of transaction trends across different categories and their respective values in the y-axis.
 It helps in identifying patterns or trends within the data and allows users to assess how different categories are distributed or how their values have evolved over time.
 
-**Fig:** Election data (Blockchain Inputted Data)
+**Fig 9** Election data (Blockchain Inputted Data)
 
 ![image](./images/global_state_graph_filtered.png)
 
@@ -175,3 +187,45 @@ It helps in identifying patterns or trends within the data and allows users to a
 - The `polling_agent_counter` represents the total registered polling agents
 - The `polling_station_counter` represents the total registered polling stations
 - The `submission_counter` represents the total number of vote counts
+
+## Summary of Findings
+
+**Consensus Reached**
+
+The analysis of consensus outcomes revealed that a significant percentage of the vote count did not reach consensus. In **fig.1** The red bars represent "No" (Consensus not reached), while the blue bars represent "Yes" (Consensus reached). This indicates a level of disagreement or non-uniformity in the election process.
+
+**Transaction Performance**
+
+The analysis of transaction performance metrics, including transaction confirmation time and throughput, provided valuable insights into how different rounds of transactions are processed. Patterns, delays, and transaction spikes were observed, which is vital for understanding network performance and efficiency.
+There was a delay in the transaction in **fig.4** at point 35000 seconds which was confirmed in 3.20 confirmed rounds.
+
+
+**Saturation Analysis**
+
+The saturation analysis of transaction fees over time showed a consistent flat transaction fee trend, suggesting stability within the Algorand network. Understanding changes in transaction fees is essential for blockchain users and operators to adapt to evolving network conditions.
+
+**Latency Analysis**
+
+The latency analysis revealed an upward trend in latency, indicating that transaction confirmation times were increasing. This might be due to network congestion, emphasizing the need for monitoring and addressing such issues.
+
+**Traffic Analysis**
+
+The traffic analysis, which focused on transaction counts across confirmed rounds, was instrumental for understanding transaction behavior, peak usage times, and the impact of specific events on transaction traffic. It helped identify moments of low transaction activity.
+**Fig.8** Shows a flat linear region which indicate a long period of low transactions.
+
+**Election Data Insights**
+
+The analysis of election-related statistics, including the total number of candidates, polling agents, polling stations, and vote counts, offered insights into the scale and scope of the election process. It provided a comprehensive view of the election-related data.
+
+## Conclusion
+
+In conclusion, this data analysis and visualization provide a comprehensive view of blockchain-based election data. 
+
+It sheds light on consensus outcomes, transaction performance, traffic patterns, and election statistics. 
+
+Overall, the Algorand blockchain is a good fit for this research as it's transaction fee cost only 0.001 algo which remains the same irrespective of the congestion of the network.Transactions are easily and quickly confirmed.
+
+Furthermore, a more accurate consensus level would been reached if the election result submitted by the different polling agents in the different polling stations are publicly available and not just the summary of already collated result.
+These insights are invaluable for optimizing system performance, understanding transaction dynamics, and enhancing the election process's integrity.
+Stakeholders, officials, and network operators can use these findings to make data-driven decisions and continually improve the blockchain-based election system. It underscores the importance of data analysis in ensuring transparency, efficiency, and trust in the election process within a blockchain network.
+

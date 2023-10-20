@@ -126,7 +126,7 @@ Understanding how transaction fees change over time is essential for blockchain 
 
 ### Latency Analysis
 
-**Fig 7** Saturation Analysis
+**Fig 7** Latency Analysis
 
 ![image](./images/latency.png)
 
